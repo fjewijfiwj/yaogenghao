@@ -1,0 +1,72 @@
+.side,.block,.info{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.choice label{
+    float:left;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.intro{
+    text-align: center;
+    margin-top: 50px;
+    line-height: 30px;
+}
+
+.intro p{
+    font-size: 4em;
+}
+
+.item{
+    border-top: dotted #aaaaaa 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.question{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.title{
+    font-size: 1.5em;
+}
+
+*{
+    font-family: "Microsoft YaHei";
+}
+
+.cup{
+    width:600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cup p{
+    font-size: 1.5em;
+    width: 800px;
+}
+
+.choice span{
+    margin-right: 5px;
+}
+
+.choice{
+    padding-left: 25px;
+}
+
+
+.controls *,#student_id{
+    height: 50px;
+    padding: 0;
+    font-size:1.5em;
+    line-height: 2em;
+    margin: 0;
+}

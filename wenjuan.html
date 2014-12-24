@@ -1,0 +1,272 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery
+/jquery-1.4.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/prettyPhoto/css/prettyPhoto.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/social-icons.css">
+    <link rel="stylesheet" href="assets/css/ebook-style.css">
+    <link rel="stylesheet" href="css/wenjuan.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery
+/jquery-1.4.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script type="text/javascript">
+        function ok()
+        {
+            var list=document.getElementsByClassName('question');
+            //var value=$('input:radio[name="sex"]:checked').val();
+            //var value=$('input:radio:checked').val();
+            var value="";
+            var done=1;
+            for( var i= 0,len=list.length; i<len; i++){
+                var title=list[i].childNodes[1].innerText;
+                //var choice=list[i].childNodes[1].
+                var name1=list[i].childNodes[3].childNodes[1].name;
+                var inputname=list[i].childNodes[3].childNodes[1].name;
+                var ss=  "input:radio[name="+inputname+"]:checked";
+                var test=$(ss);
+                var length=$(ss).length;
+                if(length==0){
+                    var inputtitle=list[i].childNodes[1].innerText;
+                    alert(inputtitle);
+                    done=0;
+                    break;
+                }else{
+
+                    value+=inputname+"_"+$(ss).val()+";";
+                }
+
+            }
+
+            if(done==1){$.ajax({
+                url: "ajax.php",
+                type: "POST",
+                data: {"name":value}
+
+            }); }
+        }
+
+        function info_send(){
+
+            var list=document.getElementsByClassName('info');//childNodes[1];//.childNodes[2];
+            var form=list[0].childNodes[1].children;
+            var str="";
+            for( var i= 0,len=form.length;i<len;i++)
+            {
+                var form_node=form[i];
+                var name=form_node.name;
+                var value=form_node.value;
+
+                str+=name+value+";";
+            }
+
+            $.ajax({
+                url: "ajax.php",
+                type: "POST",
+                data: {"name":str}
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+
+
+
+<!-- Header -->
+<div class="container">
+    <div class="header row">
+        <div class="logo span4">
+            <h1>要更好</h1>
+
+        </div>
+        <div class="tel-skype span8">
+            <h2 style="float:left;">通过数据挖掘与分析帮助学校与学生</h2>
+            <p>教师登录</p>
+        </div>
+    </div>
+</div>
+
+<!-- Product Showcase -->
+<div class="product-showcase" style="background-image: url(assets/img/backgrounds/1.jpg);background-repeat: no-repeat; background-size: 100%;">
+    <div class="product-showcase-pattern">
+        <div class="container">
+            <div class="row">
+                <div class="span12 product-background">
+                    <div class="row">
+                        <div class="span5 product-image">
+                            <img src="assets/img/ebook.png" alt="">
+                        </div>
+                        <div class="span7 product-title">
+                            <h1>银川十四中教学调研</h1>
+                            <div class="product-description">
+                                <p style="font-size: 2em; line-height: 3em;">非常感谢使用本评测系统。本系统将使用匿名的方式进行调查评测，请放心使用。反馈越真实，越方便学校改进教学教务</p>
+                                <form action="assets/subscribe.php" method="post" class="subscribe">
+                                    <input type="text" name="email" class="email" placeholder="输入你的学号">
+                                    <button type="submit"><strong>开始</strong></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="main">
+    <div class="intro" >
+        <p >科目：数学</p>
+    </div>
+    <div class="block">
+
+        <h2>教师</h2>
+        <div class="item" >
+            <div class="question">
+                <div class="title">
+                    <p>1.上课准备充分</p>
+                </div>
+                <div class="choice">
+                    <input name="hey" type="radio" value="10">10
+                    <input name="hey" type="radio" value="9">9
+
+
+                    <div style="clear:both;"></div>
+
+                </div>
+            </div>
+            <div class="question">
+                <div class="title">
+                    <p>22222222222</p>
+                </div>
+                <div class="choice">
+                    <input name="你" type="radio" value="8">8
+                    <input name="你" type="radio" value="7">7
+
+
+                    <div style="clear:both;"></div>
+
+                </div>
+            </div>
+            <div class="question">
+                <div class="title">
+                    <p>33333333333</p>
+                </div>
+                <div class="choice">
+                    <input name="怎么说" type="radio" value="6">6
+                    <input name="怎么说" type="radio" value="5">5
+
+
+                    <div style="clear:both;"></div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<div class="side">
+    <div class="info">
+        <div class="controls">
+            <select name="grade">
+                <option value="">选择年级</option>
+                <option value="7">七年级</option>
+                <option value="8">八年级</option>
+                <option value="9">九年级</option>
+            </select>
+            <select name="class">
+                <option value="">选择班级</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            <input type="text"  id="student_id"  name="student_id" placeholder="输入你的学号" >
+        </div>
+    </div>
+</div>
+
+<div class="block">
+    <div class="controls">
+        <button class="btn btn-success" onclick="ok()">Button</button>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="span4 from-twitter">
+                <h3><strong>要更好评测系统</strong></h3>
+                <p>通过获取并挖掘学生与教师的反馈的信息，获得学生表现力的主要影响因子，从而帮助学生和学校提升成绩</p>
+                <div class="show-tweet"></div>
+            </div>
+            <div class="span4 testimonials">
+                <h3>关于我们</h3>
+                <p>团队成员均来自上海交通大学，专业涉及管理、计算机、数学等专业。通过整合国际最新方法不断提升产品</p>
+
+            </div>
+            <div class="span4 contact-us">
+                <h3>反馈</h3>
+                <form action="assets/contact.php" method="post">
+                    <input type="text" name="name" class="name" placeholder="姓名">
+                    <input type="text" name="email" class="email" placeholder="邮箱">
+                    <textarea name="message" placeholder="请输入您的反馈"></textarea>
+                    <button type="submit">提交</button>
+                </form>
+            </div>
+        </div> <!-- end row -->
+        <div class="row">
+            <div class="span12">
+                <div class="social-links">
+                    <a class="facebook" href="new.php#"></a>
+                    <a class="twitter" href="new.php#"></a>
+                    <a class="dribbble" href="new.php#"></a>
+                    <a class="pinterest" href="new.php#"></a>
+                    <a class="googleplus" href="new.php#"></a>
+                    <a class="skype" href="new.php#"></a>
+                    <a class="youtube" href="new.php#"></a>
+                    <a class="vimeo" href="new.php#"></a>
+                    <a class="forrst" href="new.php#"></a>
+                    <a class="email" href="new.php#"></a>
+                </div>
+            </div>
+        </div> <!-- end row -->
+        <div class="row">
+            <div class="span12 copyright">
+                <p>© Copyright © 2014.Company name All rights reserved.</p>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</footer>
+</body>
+
+
+</body>
+</html>
